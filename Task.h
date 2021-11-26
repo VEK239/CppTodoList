@@ -6,18 +6,28 @@
 #define UNTITLED_TASK_H
 
 #include<string>
+#include <ctime>
 #include "TaskStatus.h"
 
 using namespace std;
 
 class Task {
 public:
+    void setName(string name);
+    string getName();
+    void setDescription(string desc);
+    string getDescription();
+    TaskStatus getStatus();
+    string display();
+    void complete();
+
+    Task();
+    Task(string name, string description);
+private:
     string name;
     string description;
-    int dueTo;
+    time_t creationTime;
     TaskStatus status = ACTIVE;
-
-    string display();
 };
 
 #endif //UNTITLED_TASK_H

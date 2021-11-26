@@ -3,20 +3,16 @@
 
 int main() {
     TodoList list;
-    Task testTask;
-
-    testTask.name = "TEST NAME";
-    testTask.description = "TEST DESCRIPTION";
-    testTask.dueTo = 0;
+    Task testTask("Test Name", "Test Description");
 
     list.addTask(testTask);
     list.completeTask(testTask);
-//    if(!list.addTask(testTask))
-//    {
-//        cout << "WAS UNABLE TO ADD NEW TASK: " + testTask.display();
-//    }
+    if(!list.addTask(testTask))
+    {
+        cout << "WAS UNABLE TO ADD NEW TASK: " + testTask.display();
+    }
 
-    auto resultList = list.resolvedTasks();
+    std::vector<Task> resultList = list.resolvedTasks();
 
     for (auto resultTask: resultList) {
         cout << resultTask.display();
