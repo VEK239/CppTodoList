@@ -5,10 +5,8 @@ int main() {
     TodoList list;
     Task testTask("Test Name", "Test Description");
 
-    list.addTask(testTask);
     list.completeTask(testTask);
-    if(!list.addTask(testTask))
-    {
+    if(!list.addTask(testTask)) {
         cout << "WAS UNABLE TO ADD NEW TASK: " + testTask.display();
     }
 
@@ -17,5 +15,7 @@ int main() {
     for (auto resultTask: resultList) {
         cout << resultTask.display();
     }
+
+    cout << "Something funny!";
     return 0;
 }
